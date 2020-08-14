@@ -4,7 +4,6 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    @all_ingredients = ['ananas', 'tequila', 'rhum']
     @cocktail = Cocktail.new(cocktail_params)
     @cocktail.save
     redirect_to cocktail_path(@cocktail)
