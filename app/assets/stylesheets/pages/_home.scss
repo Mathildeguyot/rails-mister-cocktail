@@ -1,1 +1,35 @@
 // Specific CSS for your home-page
+.display-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+#home-title {
+  text-align: center;
+  padding: 60px;
+  font-size: 75px;
+}
+
+html {
+  min-height: 100%;
+}
+body {
+  background: linear-gradient(175deg, #e66465, #9198e5);
+  background-repeat: no-repeat;
+}
+
+#button-display {
+  display: flex;
+  justify-content: center;
+}
+.button {
+  text-align: center;
+  background-color: yellow;
+  margin: 38px;
+  width: 266px;
+  padding: 15px;
+  box-shadow: 9px 6px 0px #f927df;
+  font-size: 25px;
+  font-family: $headers-font;
+}

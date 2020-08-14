@@ -1,10 +1,16 @@
-<h1>All cocktails</h1>
-<div id="cocktails">
+<h1 class="headers-font" id="home-title">All cocktails</h1>
+<div class="display-card">
   <% @cocktails.each do |cocktail| %>
     <div class="card-cocktail">
-      <img src="https://images.unsplash.com/photo-1570598912132-0ba1dc952b7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" alt="Card image cap">
+      <% if cocktail.photo.attached? %>
+        <%= cl_image_tag cocktail.photo.key, crop: :fill %>
+      <% else %>
+        <img src="https://images.unsplash.com/photo-1570598912132-0ba1dc952b7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" alt="Card image cap">
+      <% end %>
       <p class="card-text"><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
     </div>
   <% end %>
 </div>
-<%= link_to 'Add a new cocktail', new_cocktail_path, class: 'btn btn-primary' %>
+<div class='d-flex justify-content-center'>
+  <%= link_to 'Add a new cocktail', new_cocktail_path, class: 'button' %>
+</div>
